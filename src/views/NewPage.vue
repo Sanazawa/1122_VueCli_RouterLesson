@@ -13,6 +13,16 @@
         >
           元件B
         </router-link>
+        <router-link to="/newpage/namedView/a2b"
+          class="list-group-item list-group-item-action"
+        >
+          命名視圖 A2B
+        </router-link>
+        <router-link to="/newpage/namedView/c2a"
+          class="list-group-item list-group-item-action"
+        >
+          命名視圖 C2A
+        </router-link>
       </div>
     </div>
     <div class="col-8">
