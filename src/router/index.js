@@ -68,6 +68,18 @@ const routes = [
       },
     ],
   },
+  // 404 Not Found 頁面
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFound.vue'),
+  },
+  // 重新導向
+  {
+    path: '/newPage/:pthMatch(.*)*',
+    redirect: {
+      name: 'home',
+    },
+  },
 ];
 
 const router = createRouter({
