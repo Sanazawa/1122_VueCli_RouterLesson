@@ -85,6 +85,20 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  linkActiveClass: 'active',
+  scrollBehavior(to, from, savedPosition) {
+    // `to` and `from` are both route locations
+    // `savedPosition` can be null if there isn't one
+    console.log(to, from, savedPosition);
+    // 使用scrollBehavior，當符合開啟newPage頁面條件時自動拉到最上面
+    if (to.fullPath.match('newPage')) {
+      return {
+        top: 0,
+      };
+    }
+    // 當設定了某些條件下scrollBehavior回傳值後，最外層也必需要有設定移動的值(如top: 0)，因其他的不動作故在此回傳空
+    return {};
+  },
 });
 
 export default router;
